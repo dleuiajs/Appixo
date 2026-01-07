@@ -35,7 +35,7 @@ export default defineComponent(
         <v-divider></v-divider>
 
         <div>
-            {{ new Date().getFullYear() }} - Appixo
+            © {{ new Date().getFullYear() }} Appixo. All rights reserved
         </div>
     </v-footer>
 </template>
