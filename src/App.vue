@@ -1,17 +1,24 @@
 <script lang="ts">
 import { RouterView } from 'vue-router'
+import TheNavigation from './components/TheNavigation.vue';
 
 export default {
+  name: 'App',
   components: {
-    name: 'App'
+    RouterView,
+    TheNavigation
   }
 }
 </script>
 
 <template>
-  <header>
-  </header>
-  <div class="container">
-    <RouterView />
-  </div>
+  <v-app>
+    <!-- header -->
+    <TheNavigation />
+
+    <!-- main -->
+    <v-main>
+      <RouterView />
+    </v-main>
+  </v-app>
 </template>

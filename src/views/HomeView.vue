@@ -7,7 +7,7 @@ export default {
 <template>
   <v-app>
     <v-main>
-      <v-btn>Hello World!</v-btn>
+      <p>Welcome!</p>
     </v-main>
   </v-app>
 </template>
