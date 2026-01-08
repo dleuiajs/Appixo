@@ -12,6 +12,10 @@ export default defineComponent({
         screenshotsImgs: { type: Array as () => string[], required: true },
         type: { type: String, required: true }
     },
+    data: () => ({
+        dialogShowed: false,
+        activeImg: "",
+    }),
 })
 </script>
 
@@ -27,7 +31,9 @@ export default defineComponent({
                 <span class="text-subtitle text-truncate-2">{{ description }}</span>
                 <div class="d-flex flex-row ga-2 mt-2">
                     <v-img v-for="img in screenshotsImgs" :key="img" :src="img" :alt="`${title} screenshot`"
-                        :aspect-ratio="16 / 9" cover max-width="179"></v-img>
+                        :aspect-ratio="16 / 9" cover max-width="179" @click="dialogShowed = true; activeImg = img"
+                        v-ripple class="cursor-pointer">
+                    </v-img>
                 </div>
                 <div class="mt-4 d-flex flex-wrap ga-2">
                     <v-chip v-for="tag in tags" :key="tag">{{ tag }}</v-chip>
@@ -37,6 +43,17 @@ export default defineComponent({
             </v-col>
         </v-row>
     </v-container>
+    <v-dialog v-model="dialogShowed" max-height="80vh" max-width="80vw">
+        <v-card class=" py-5 px-5">
+            <v-carousel hide-delimiters>
+                <v-carousel-item v-for="scrImg in screenshotsImgs" :key="scrImg">
+                    <div class="img-center">
+                        <v-img :src="scrImg" :alt="title + ' screenshot'" contain></v-img>
+                    </div>
+                </v-carousel-item>
+            </v-carousel>
+        </v-card>
+    </v-dialog>
 </template>
 
 <style>
@@ -46,5 +63,13 @@ export default defineComponent({
     line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+.img-center {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 </style>

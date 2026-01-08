@@ -44,7 +44,7 @@ export default defineComponent({
             <span class="text-h6">{{ title }}</span>
             <div class="mt-1 mb-2">
                 <v-carousel hide-delimiters :show-arrows="false" cycle height="205" interval="2000" crossfade>
-                    <v-carousel-item v-for="scrImg in screenshotsImgs" :id="scrImg">
+                    <v-carousel-item v-for="scrImg in screenshotsImgs" :key="scrImg">
                         <v-img :aspect-ratio="16 / 9" :src="scrImg" :alt="title + ' screenshot'" cover></v-img>
                     </v-carousel-item>
                 </v-carousel>
