@@ -41,11 +41,11 @@ export default defineComponent({
             </v-card>
         </template>
         <div class="d-flex flex-column my-1">
-            <a class="text-h6">{{ title }}</a>
+            <span class="text-h6">{{ title }}</span>
             <div class="mt-1 mb-2">
                 <v-img :aspect-ratio="16 / 9" :src="screenshotImg" :alt="title + ' screenshot'" cover></v-img>
             </div>
-            <a class="text-body1">{{ description }}</a>
+            <span class="text-body1">{{ description }}</span>
             <v-chip-group>
                 <v-chip v-for="tag in tags" :key="tag">{{ tag }}</v-chip>
             </v-chip-group>
