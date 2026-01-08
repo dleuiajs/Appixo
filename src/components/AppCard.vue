@@ -4,11 +4,12 @@ import { defineComponent } from 'vue';
 export default defineComponent({
     name: "AppCard",
     props: {
+        url: { type: String, required: true },
         title: { type: String, required: true },
         description: { type: String, required: true },
         tags: { type: Array as () => string[], required: true },
         logoImg: { type: String, required: true },
-        screenshotImg: { type: String, required: true },
+        screenshotsImgs: { type: Array as () => string[], required: true },
         views: { type: Number, required: true },
         downloads: { type: Number, required: true },
         hearts: { type: Number, required: true },
@@ -21,8 +22,7 @@ export default defineComponent({
     <v-tooltip max-width="400" open-on-hover :open-delay="350">
         <template v-slot:activator="{ props: activatorProps }">
             <v-card class="mx-2 pb-3" width="200" elevation="2"
-                :to="`/apps/${type === 'software' ? 'software' : 'games'}/${title.toLowerCase()}`"
-                v-bind="activatorProps">
+                :to="`/apps/${type === 'software' ? 'software' : 'games'}/${url}`" v-bind="activatorProps">
                 <v-img :aspect-ratio="1" :src="logoImg" :alt="title + ' logo'" cover></v-img>
                 <v-card-title>{{ title }}</v-card-title>
                 <v-card-subtitle>
@@ -43,7 +43,11 @@ export default defineComponent({
         <div class="d-flex flex-column my-1">
             <span class="text-h6">{{ title }}</span>
             <div class="mt-1 mb-2">
-                <v-img :aspect-ratio="16 / 9" :src="screenshotImg" :alt="title + ' screenshot'" cover></v-img>
+                <v-carousel hide-delimiters :show-arrows="false" cycle height="205" interval="2000" crossfade>
+                    <v-carousel-item v-for="scrImg in screenshotsImgs" :id="scrImg">
+                        <v-img :aspect-ratio="16 / 9" :src="scrImg" :alt="title + ' screenshot'" cover></v-img>
+                    </v-carousel-item>
+                </v-carousel>
             </div>
             <span class="text-body1">{{ description }}</span>
             <v-chip-group>

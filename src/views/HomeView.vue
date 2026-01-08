@@ -45,13 +45,13 @@ export default {
         <v-card class="py-4" elevation="2">
           <v-carousel height="380" cycle hide-delimiter-background delimiter-icon="mdi-square-rounded" color="grey">
             <v-carousel-item :value="0">
-              <AppBigCard title="Snake"
+              <AppBigCard url="snake" title="Snake: Tetris Style Edition"
                 description="Simple Snake game created in Unity, inspired by the classic visual style of Tetris. The game features a minimalist Tetris-style design, best score saving, pause and fullscreen support, as well as Discord Rich Presence support."
                 :tags="['Retro', '2D', 'Pixel Art', 'Tetris', 'Arcade']" :wideLogoImg="snakeWideLogo"
                 :screenshotsImgs="[snakeScreenshot1, snakeScreenshot2, snakeScreenshot3]" type="game" />
             </v-carousel-item>
             <v-carousel-item :value="1">
-              <AppBigCard title="VirtualPiano"
+              <AppBigCard url="virtualpiano" title="VirtualPiano"
                 description="Play a virtual piano using the keyboard in a console application written in C#. The program is lightweight, and sounds are reproduced via frequencies."
                 :tags="['Lightweight', 'Music', 'C#']" :wideLogoImg="virtualPianoLogo"
                 :screenshotsImgs="[virtualPianoScreenshot]" type="software" />
@@ -70,18 +70,21 @@ export default {
             </v-btn>
           </div>
           <div class="d-flex flex-row">
-            <AppCard title="Snake"
+            <AppCard url="snake" title="Snake: Tetris Style Edition"
               description="Simple Snake game created in Unity, inspired by the classic visual style of Tetris. The game features a minimalist Tetris-style design, best score saving, pause and fullscreen support, as well as Discord Rich Presence support."
               :tags="['Retro', '2D', 'Pixel Art', 'Tetris', 'Arcade']" :logoImg="snakeLogo"
-              :screenshotImg="snakeScreenshot1" :views="3" :downloads="1" :hearts="0" type="game" />
-            <AppCard title="Snake1"
+              :screenshotsImgs="[snakeScreenshot1, snakeScreenshot2, snakeScreenshot3]" :views="3" :downloads="1"
+              :hearts="0" type="game" />
+            <AppCard url="snake" title="Snake: Tetris Style Edition"
               description="Simple Snake game created in Unity, inspired by the classic visual style of Tetris. The game features a minimalist Tetris-style design, best score saving, pause and fullscreen support, as well as Discord Rich Presence support."
               :tags="['Retro', '2D', 'Pixel Art', 'Tetris', 'Arcade']" :logoImg="snakeLogo"
-              :screenshotImg="snakeScreenshot1" :views="3" :downloads="1" :hearts="0" type="game" />
-            <AppCard title="Snake2"
+              :screenshotsImgs="[snakeScreenshot1, snakeScreenshot2, snakeScreenshot3]" :views="3" :downloads="1"
+              :hearts="0" type="game" />
+            <AppCard url="snake" title="Snake: Tetris Style Edition"
               description="Simple Snake game created in Unity, inspired by the classic visual style of Tetris. The game features a minimalist Tetris-style design, best score saving, pause and fullscreen support, as well as Discord Rich Presence support."
               :tags="['Retro', '2D', 'Pixel Art', 'Tetris', 'Arcade']" :logoImg="snakeLogo"
-              :screenshotImg="snakeScreenshot1" :views="3" :downloads="1" :hearts="0" type="game" />
+              :screenshotsImgs="[snakeScreenshot1, snakeScreenshot2, snakeScreenshot3]" :views="3" :downloads="1"
+              :hearts="0" type="game" />
           </div>
         </div>
 
@@ -94,18 +97,18 @@ export default {
             </v-btn>
           </div>
           <div class="d-flex flex-row">
-            <AppCard title="VirtualPiano"
+            <AppCard url="virtualpiano" title="VirtualPiano"
               description="Play a virtual piano using the keyboard in a console application written in C#. The program is lightweight, and sounds are reproduced via frequencies."
-              :tags="['Lightweight', 'Music', 'C#']" :logoImg="virtualPianoLogo" :screenshotImg="virtualPianoScreenshot"
-              :views="5" :downloads="2" :hearts="1" type="software" />
-            <AppCard title="VirtualPiano1"
+              :tags="['Lightweight', 'Music', 'C#']" :logoImg="virtualPianoLogo"
+              :screenshotsImgs="[virtualPianoScreenshot]" :views="5" :downloads="2" :hearts="1" type="software" />
+            <AppCard url="virtualpiano" title="VirtualPiano1"
               description="Play a virtual piano using the keyboard in a console application written in C#. The program is lightweight, and sounds are reproduced via frequencies."
-              :tags="['Lightweight', 'Music', 'C#']" :logoImg="virtualPianoLogo" :screenshotImg="virtualPianoScreenshot"
-              :views="5" :downloads="2" :hearts="1" type="software" />
-            <AppCard title="VirtualPiano2"
+              :tags="['Lightweight', 'Music', 'C#']" :logoImg="virtualPianoLogo"
+              :screenshotsImgs="[virtualPianoScreenshot]" :views="5" :downloads="2" :hearts="1" type="software" />
+            <AppCard url="virtualpiano" title="VirtualPiano2"
               description="Play a virtual piano using the keyboard in a console application written in C#. The program is lightweight, and sounds are reproduced via frequencies."
-              :tags="['Lightweight', 'Music', 'C#']" :logoImg="virtualPianoLogo" :screenshotImg="virtualPianoScreenshot"
-              :views="5" :downloads="2" :hearts="1" type="software" />
+              :tags="['Lightweight', 'Music', 'C#']" :logoImg="virtualPianoLogo"
+              :screenshotsImgs="[virtualPianoScreenshot]" :views="5" :downloads="2" :hearts="1" type="software" />
           </div>
         </div>
       </div>

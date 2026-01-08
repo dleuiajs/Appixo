@@ -4,6 +4,7 @@ import { defineComponent } from 'vue';
 export default defineComponent({
     name: "AppBigCard",
     props: {
+        url: { type: String, required: true },
         title: { type: String, required: true },
         description: { type: String, required: true },
         tags: { type: Array as () => string[], required: true },
@@ -32,7 +33,7 @@ export default defineComponent({
                     <v-chip v-for="tag in tags" :key="tag">{{ tag }}</v-chip>
                 </div>
                 <v-btn class="my-4" max-width="100" append-icon="mdi-arrow-right" variant="outlined"
-                    :to="`/apps/${type === 'software' ? 'software' : 'games'}/${title.toLowerCase()}`">Get</v-btn>
+                    :to="`/apps/${type === 'software' ? 'software' : 'games'}/${url}`">Get</v-btn>
             </v-col>
         </v-row>
     </v-container>
