@@ -5,7 +5,10 @@ export default defineComponent({
     name: "AppCard",
     props: {
         title: { type: String, required: true },
-        image: { type: String, required: true },
+        description: { type: String, required: true },
+        tags: { type: Array as () => string[], required: true },
+        logoImg: { type: String, required: true },
+        screenshotImg: { type: String, required: true },
         views: { type: Number, required: true },
         downloads: { type: Number, required: true },
         hearts: { type: Number, required: true },
@@ -15,22 +18,37 @@ export default defineComponent({
 </script>
 
 <template>
-    <v-card class="mx-2 pb-3" width="200" elevation="2"
-        :to="`/apps/${type === 'software' ? 'software' : 'games'}/${title.toLowerCase()}`">
-        <v-img :aspect-ratio="1" :src="image" :alt="title + ' image'" cover></v-img>
-        <v-card-title>{{ title }}</v-card-title>
-        <v-card-subtitle>
-            <div class="d-flex flex-row ga-3">
-                <div class="d-flex flex-row ga-1">
-                    <v-icon>mdi-eye</v-icon>{{ views }}
-                </div>
-                <div class="d-flex flex-row ga-1">
-                    <v-icon>mdi-download-circle</v-icon>{{ downloads }}
-                </div>
-                <div class="d-flex flex-row ga-1">
-                    <v-icon>mdi-heart</v-icon>{{ hearts }}
-                </div>
+    <v-tooltip max-width="400" open-on-hover :open-delay="350">
+        <template v-slot:activator="{ props: activatorProps }">
+            <v-card class="mx-2 pb-3" width="200" elevation="2"
+                :to="`/apps/${type === 'software' ? 'software' : 'games'}/${title.toLowerCase()}`"
+                v-bind="activatorProps">
+                <v-img :aspect-ratio="1" :src="logoImg" :alt="title + ' logo'" cover></v-img>
+                <v-card-title>{{ title }}</v-card-title>
+                <v-card-subtitle>
+                    <div class="d-flex flex-row ga-3">
+                        <div class="d-flex flex-row ga-1">
+                            <v-icon>mdi-eye</v-icon>{{ views }}
+                        </div>
+                        <div class="d-flex flex-row ga-1">
+                            <v-icon>mdi-download-circle</v-icon>{{ downloads }}
+                        </div>
+                        <div class="d-flex flex-row ga-1">
+                            <v-icon>mdi-heart</v-icon>{{ hearts }}
+                        </div>
+                    </div>
+                </v-card-subtitle>
+            </v-card>
+        </template>
+        <div class="d-flex flex-column my-1">
+            <a class="text-h6">{{ title }}</a>
+            <div class="mt-1 mb-2">
+                <v-img :aspect-ratio="16 / 9" :src="screenshotImg" :alt="title + ' screenshot'" cover></v-img>
             </div>
-        </v-card-subtitle>
-    </v-card>
+            <a class="text-body1">{{ description }}</a>
+            <v-chip-group>
+                <v-chip v-for="tag in tags" :key="tag">{{ tag }}</v-chip>
+            </v-chip-group>
+        </div>
+    </v-tooltip>
 </template>
