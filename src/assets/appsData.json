@@ -1,0 +1,102 @@
+{
+    "apps": [
+        {
+            "id": 1,
+            "type": "game",
+            "url": "snake_tse",
+            "name": "Snake: Tetris Style Edition",
+            "description": "Simple Snake game created in Unity, inspired by the classic visual style of Tetris. The game features a minimalist Tetris-style design, best score saving, pause and fullscreen support, as well as Discord Rich Presence support.",
+            "tags": [
+                "Retro",
+                "2D",
+                "Pixel Art",
+                "Tetris",
+                "Arcade"
+            ],
+            "screenshots": [
+                "src/assets/images/apps_screenshots/SnakeScreenshot1.png",
+                "src/assets/images/apps_screenshots/SnakeScreenshot2.png",
+                "src/assets/images/apps_screenshots/SnakeScreenshot3.png"
+            ],
+            "logo": "src/assets/images/apps_logos/SnakeLogo1_1.png",
+            "wideLogo": "src/assets/images/apps_logos/SnakeLogo16_10.png"
+        },
+        {
+            "id": 2,
+            "type": "software",
+            "url": "virtualpiano",
+            "name": "VirtualPiano",
+            "description": "Play a virtual piano using the keyboard in a console application written in C#. The program is lightweight, and sounds are reproduced via frequencies.",
+            "tags": [
+                "Lightweight",
+                "Music",
+                "C#"
+            ],
+            "screenshots": [
+                "src/assets/images/apps_screenshots/VirtualPianoScreenshot.png"
+            ],
+            "logo": "src/assets/images/apps_logos/VirtualPianoLogo.png",
+            "wideLogo": "src/assets/images/apps_logos/VirtualPianoLogo.png"
+        },
+        {
+            "id": 3,
+            "type": "game",
+            "url": "springball",
+            "name": "Spring Ball",
+            "description": "In the game, you control a ball that jumps across platforms. Try to get as far as possible and try not to fall, otherwise you may lose!",
+            "tags": [
+                "Platformer",
+                "Arcade",
+                "2D",
+                "Endless Runner"
+            ],
+            "screenshots": [
+                "src/assets/images/apps_screenshots/SpringBallScreenshot1.png",
+                "src/assets/images/apps_screenshots/SpringBallScreenshot2.png",
+                "src/assets/images/apps_screenshots/SpringBallScreenshot3.png"
+            ],
+            "logo": "src/assets/images/apps_logos/SpringBallLogo1_1.png",
+            "wideLogo": "src/assets/images/apps_logos/SpringBallLogo16_10.png"
+        },
+        {
+            "id": 4,
+            "type": "game",
+            "url": "fishisland",
+            "name": "Fish Island",
+            "description": "Catch fish, sell fish, upgrade your fishing rod, catch fish again, sell again! Develop your fish island in this arcade fishing game!",
+            "tags": [
+                "Simulator",
+                "Arcade",
+                "2D",
+                "Pixel Art",
+                "Indie"
+            ],
+            "screenshots": [
+                "src/assets/images/apps_screenshots/FishIslandScreenshot1.png",
+                "src/assets/images/apps_screenshots/FishIslandScreenshot2.png",
+                "src/assets/images/apps_screenshots/FishIslandScreenshot3.png"
+            ],
+            "logo": "src/assets/images/apps_logos/FishIslandLogo1_1.png",
+            "wideLogo": "src/assets/images/apps_logos/FishIslandLogo16_10.png"
+        },
+        {
+            "id": 5,
+            "type": "software",
+            "url": "fakeoverclockcpu",
+            "name": "Fake Overclock CPU",
+            "description": "Prank your friends with this program that will fake overclock your processor! Don't forget to keep an eye on the temperature.",
+            "tags": [
+                "Lightweight",
+                "Fun",
+                "C#"
+            ],
+            "screenshots": [
+                "src/assets/images/apps_screenshots/OverclockScreenshot1.png",
+                "src/assets/images/apps_screenshots/OverclockScreenshot2.png",
+                "src/assets/images/apps_screenshots/OverclockScreenshot3.png"
+            ],
+            "logo": "src/assets/images/apps_logos/OverclockLogo1_1.png",
+            "wideLogo": "src/assets/images/apps_logos/OverclockLogo16_10.png"
+        }
+    ]
+}

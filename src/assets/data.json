@@ -1,9 +1,0 @@
-{
-    "apps": [
-        {
-            "name": "Snake",
-            "description": "Simple Snake game created in Unity, inspired by the classic visual style of Tetris. The game features a minimalist Tetris-style design, best score saving, pause and fullscreen support, as well as Discord Rich Presence support.",
-            "tags": ["Retro", "2D", "Pixel Art", "Tetris", "Arcade"]
-        }
-    ]
-}
