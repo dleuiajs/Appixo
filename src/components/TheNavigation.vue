@@ -1,17 +1,16 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { useTheme } from 'vuetify';
+
+import { useSettingsStore } from '@/stores/settings';
 
 export default defineComponent(
     {
         name: "TheNavigation",
-        setup() {
-            {
-                const theme = useTheme();
-
-                return { theme };
+        data() {
+            return {
+                settingsStore: useSettingsStore(),
             }
-        },
+        }
     }
 )
 </script>
@@ -24,7 +23,8 @@ export default defineComponent(
             <v-btn to="/apps/games" text="Games"></v-btn>
             <v-btn to="/apps/software" text="Software"></v-btn>
             <v-divider inset vertical></v-divider>
-            <v-btn icon="mdi-theme-light-dark" @click="theme.toggle()"></v-btn>
+            <v-btn :icon="settingsStore.getTheme === 'light' ? 'mdi-weather-night' : 'mdi-weather-sunny'"
+                @click="settingsStore.toggleTheme()"></v-btn>
         </v-toolbar-items>
     </v-toolbar>
 </template>

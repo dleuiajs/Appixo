@@ -56,7 +56,7 @@ export default defineComponent({
     </v-dialog>
 </template>
 
-<style>
+<style scoped>
 .text-truncate-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
