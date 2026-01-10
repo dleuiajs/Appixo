@@ -21,7 +21,7 @@ export default defineComponent({
 <template>
     <v-tooltip max-width="400" open-on-hover :open-delay="350">
         <template v-slot:activator="{ props: activatorProps }">
-            <v-card class="mx-2 pb-3" width="200" elevation="2"
+            <v-card class="pb-3" width="200" elevation="2"
                 :to="`/apps/${type === 'software' ? 'software' : 'games'}/${url}`" v-bind="activatorProps">
                 <v-img :aspect-ratio="1" :src="logoImg" :alt="title + ' logo'" cover></v-img>
                 <v-card-title>{{ title }}</v-card-title>

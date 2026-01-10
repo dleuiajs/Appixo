@@ -30,7 +30,7 @@ export default defineComponent({
 </script>
 
 <template>
-    <div class="d-flex flex-row">
+    <div class="d-flex flex-row flex-wrap ga-3">
         <AppCard v-for="app in filteredApps" :key="app.id" :url="app.url" :title="app.name"
             :description="app.description" :tags="app.tags" :logoImg="app.logo" :screenshotsImgs="app.screenshots"
             :type="appsType" :views="0" :downloads="0" :hearts="0" />

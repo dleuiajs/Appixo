@@ -97,6 +97,82 @@
             ],
             "logo": "src/assets/images/apps_logos/OverclockLogo1_1.png",
             "wideLogo": "src/assets/images/apps_logos/OverclockLogo16_10.png"
+        },
+        {
+            "id": 6,
+            "type": "software",
+            "url": "keyboardtrainerconsole",
+            "name": "Keyboard Trainer Console",
+            "description": "Improve your typing skills with this game-like program! Complete achievements, level up, and track your stats. Multiple languages are available, and there is also an account system.",
+            "tags": [
+                "Lightweight",
+                "Trainer",
+                "C#"
+            ],
+            "screenshots": [
+                "src/assets/images/apps_screenshots/KeyboardTrainerConsoleScreenshot1.png",
+                "src/assets/images/apps_screenshots/KeyboardTrainerConsoleScreenshot2.png",
+                "src/assets/images/apps_screenshots/KeyboardTrainerConsoleScreenshot3.png"
+            ],
+            "logo": "src/assets/images/apps_logos/KeyboardTrainerConsoleLogo1_1.png",
+            "wideLogo": "src/assets/images/apps_logos/KeyboardTrainerConsoleLogo16_10.png"
+        },
+        {
+            "id": 7,
+            "type": "software",
+            "url": "steamgamesremover",
+            "name": "Steam Games Remover",
+            "description": "Have you added a lot of free games to Steam and decided to remove them from your account, but it's taking too long? This program will help you! Enter the IDs of all the games you want to remove and open all the links for removal at once.",
+            "tags": [
+                "Lightweight",
+                "Helper",
+                "C#"
+            ],
+            "screenshots": [
+                "src/assets/images/apps_screenshots/SteamGamesRemoverScreenshot1.png",
+                "src/assets/images/apps_screenshots/SteamGamesRemoverScreenshot2.png"
+            ],
+            "logo": "src/assets/images/apps_logos/SteamGamesRemoverLogo1_1.png",
+            "wideLogo": "src/assets/images/apps_logos/SteamGamesRemoverLogo16_10.png"
+        },
+        {
+            "id": 8,
+            "type": "software",
+            "url": "fakeminer",
+            "name": "Fake Miner",
+            "description": "Surprise your friends with a fake mining farm that will earn you 1,000 fake bitcoins a day! Set up your farm and don't forget to keep an eye on the temperature of your graphics card.",
+            "tags": [
+                "Lightweight",
+                "Fun",
+                "C#"
+            ],
+            "screenshots": [
+                "src/assets/images/apps_screenshots/FakeMinerScreenshot1.png",
+                "src/assets/images/apps_screenshots/FakeMinerScreenshot2.png",
+                "src/assets/images/apps_screenshots/FakeMinerScreenshot3.png"
+            ],
+            "logo": "src/assets/images/apps_logos/FakeMinerLogo1_1.png",
+            "wideLogo": "src/assets/images/apps_logos/FakeMinerLogo16_10.png"
+        },
+        {
+            "id": 4,
+            "type": "game",
+            "url": "agessurvival",
+            "name": "Ages Survival",
+            "description": "Forest survival simulator: chop trees, dig for stones, search for food, and survive!",
+            "tags": [
+                "Simulator",
+                "Survival",
+                "First-person",
+                "3D"
+            ],
+            "screenshots": [
+                "src/assets/images/apps_screenshots/AgesSurvivalScreenshot1.png",
+                "src/assets/images/apps_screenshots/AgesSurvivalScreenshot2.png",
+                "src/assets/images/apps_screenshots/AgesSurvivalScreenshot3.png"
+            ],
+            "logo": "src/assets/images/apps_logos/AgesSurvivalLogo1_1.png",
+            "wideLogo": "src/assets/images/apps_logos/AgesSurvivalLogo16_10.png"
         }
     ]
 }
