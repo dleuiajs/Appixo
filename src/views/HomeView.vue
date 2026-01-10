@@ -29,7 +29,7 @@ export default {
               <p class="text-caption">More</p>
             </v-btn>
           </div>
-          <AppCardsList appsType="game" :appsLimit="14" />
+          <AppCardsList appType="game" :appsLimit="14" />
         </div>
 
         <div class="d-flex flex-column ga-3">
@@ -40,7 +40,7 @@ export default {
               <p class="text-caption">More</p>
             </v-btn>
           </div>
-          <AppCardsList appsType="software" :appsLimit="14" />
+          <AppCardsList appType="software" :appsLimit="14" />
         </div>
       </div>
     </v-main>

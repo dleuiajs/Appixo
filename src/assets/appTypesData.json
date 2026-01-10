@@ -1,0 +1,16 @@
+{
+    "types": [
+        {
+            "type": "game",
+            "typePlural": "games",
+            "name": "Game",
+            "namePlural": "Games"
+        },
+        {
+            "type": "software",
+            "typePlural": "software",
+            "name": "Software",
+            "namePlural": "Software"
+        }
+    ]
+}

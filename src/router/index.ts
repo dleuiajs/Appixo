@@ -10,13 +10,13 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: '/apps/:appsType',
+      path: '/apps/:appTypePlural',
       name: 'apps',
       component: () => import('../views/AppsView.vue'),
       props: true,
     },
     {
-      path: '/apps/:appsType/:appName',
+      path: '/apps/:appTypePlural/:appName',
       name: 'app',
       component: () => import('../views/AppDetail.vue'),
       props: true,

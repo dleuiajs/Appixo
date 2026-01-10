@@ -20,6 +20,12 @@ export default defineComponent({
         openCarousel(index: number) {
             this.activeIndex = index;
             this.dialogShowed = true;
+        },
+        getImgUrl(imgUrlFromJson: string) {
+            return new URL(
+                '../assets/images/' + imgUrlFromJson,
+                import.meta.url
+            ).href;
         }
     }
 })
@@ -29,16 +35,16 @@ export default defineComponent({
     <v-container>
         <v-row>
             <v-col cols="5">
-                <v-img :aspect-ratio="4 / 3" :src="wideLogoImg" :alt="title + ' logo'" max-width="390" rounded
-                    cover></v-img>
+                <v-img :aspect-ratio="4 / 3" :src="getImgUrl(wideLogoImg)" :alt="title + ' logo'" max-width="390"
+                    rounded cover></v-img>
             </v-col>
             <v-col cols="7" class="d-flex flex-column">
                 <span class="text-h6">{{ title }}</span>
                 <span class="text-subtitle text-truncate-2">{{ description }}</span>
                 <div class="d-flex flex-row ga-2 mt-2">
-                    <v-img v-for="(img, index) in screenshotsImgs" :key="img" :src="img" :alt="`${title} screenshot`"
-                        :aspect-ratio="16 / 9" cover max-width="179" @click="openCarousel(index)" v-ripple
-                        class="cursor-pointer">
+                    <v-img v-for="(img, index) in screenshotsImgs" :key="img" :src="getImgUrl(img)"
+                        :alt="`${title} screenshot`" :aspect-ratio="16 / 9" cover max-width="179"
+                        @click="openCarousel(index)" v-ripple class="cursor-pointer">
                     </v-img>
                 </div>
                 <div class="mt-4 d-flex flex-wrap ga-2">
@@ -54,7 +60,7 @@ export default defineComponent({
             <v-carousel hide-delimiters v-model="activeIndex">
                 <v-carousel-item v-for="(scrImg, index) in screenshotsImgs" :key="scrImg" :value="index">
                     <div class="img-center">
-                        <v-img :src="scrImg" :alt="title + ' screenshot'" contain></v-img>
+                        <v-img :src="getImgUrl(scrImg)" :alt="title + ' screenshot'" contain></v-img>
                     </div>
                 </v-carousel-item>
             </v-carousel>

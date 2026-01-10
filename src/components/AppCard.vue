@@ -14,7 +14,15 @@ export default defineComponent({
         downloads: { type: Number, required: true },
         hearts: { type: Number, required: true },
         type: { type: String, required: true }
-    }
+    },
+    methods: {
+        getImgUrl(imgUrlFromJson: string) {
+            return new URL(
+                '../assets/images/' + imgUrlFromJson,
+                import.meta.url
+            ).href;
+        }
+    },
 })
 </script>
 
@@ -23,7 +31,7 @@ export default defineComponent({
         <template v-slot:activator="{ props: activatorProps }">
             <v-card class="pb-3" width="200" elevation="2"
                 :to="`/apps/${type === 'software' ? 'software' : 'games'}/${url}`" v-bind="activatorProps">
-                <v-img :aspect-ratio="1" :src="logoImg" :alt="title + ' logo'" cover></v-img>
+                <v-img :aspect-ratio="1" :src="getImgUrl(logoImg)" :alt="title + ' logo'" cover></v-img>
                 <v-card-title>{{ title }}</v-card-title>
                 <v-card-subtitle>
                     <div class="d-flex flex-row ga-3">
@@ -45,7 +53,8 @@ export default defineComponent({
             <div class="mt-1 mb-2">
                 <v-carousel hide-delimiters :show-arrows="false" cycle height="205" interval="2000" crossfade>
                     <v-carousel-item v-for="scrImg in screenshotsImgs" :key="scrImg">
-                        <v-img :aspect-ratio="16 / 9" :src="scrImg" :alt="title + ' screenshot'" cover></v-img>
+                        <v-img :aspect-ratio="16 / 9" :src="getImgUrl(scrImg)" :alt="title + ' screenshot'"
+                            cover></v-img>
                     </v-carousel-item>
                 </v-carousel>
             </div>
