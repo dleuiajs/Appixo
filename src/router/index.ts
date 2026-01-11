@@ -16,11 +16,16 @@ const router = createRouter({
       props: true,
     },
     {
-      path: '/apps/:appTypePlural/:appName',
+      path: '/apps/:appTypePlural/:appUrl',
       name: 'app',
       component: () => import('../views/AppDetail.vue'),
       props: true,
     },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'NotFound',
+      component: () => import('@/views/NotFound.vue')
+    }
   ],
 })
 

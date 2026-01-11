@@ -18,8 +18,17 @@ export default {
     },
     computed: {
         getAppTypeData() {
-            return this.appTypesData.find((t) => t.typePlural === this.appTypePlural) ||
-                { type: '', typePlural: '', name: '', namePlural: '' }
+            return this.appTypesData.find((t) => t.typePlural === this.appTypePlural);
+        }
+    },
+    watch: {
+        getAppTypeData: {
+            handler(newValue) {
+                if (!newValue) {
+                    this.$router.replace({ name: 'NotFound' })
+                }
+            },
+            immediate: true
         }
     }
 }
@@ -28,7 +37,7 @@ export default {
 <template>
     <v-app>
         <v-main>
-            <div class="d-flex flex-column ga-5 mb-10 px-5 mx-1 my-5">
+            <div class="d-flex flex-column ga-5 mb-10 px-5 mx-1 my-5" v-if="getAppTypeData">
                 <div class="d-flex flex-column ga-3">
                     <div class="d-flex flex-row align-center ga-5">
                         <span class="text-h5">{{ getAppTypeData.namePlural }}:</span>

@@ -1,6 +1,8 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
+import { getImgUrl } from '@/utils/getImgUrl';
+
 export default defineComponent({
     name: "AppCard",
     props: {
@@ -16,12 +18,7 @@ export default defineComponent({
         type: { type: String, required: true }
     },
     methods: {
-        getImgUrl(imgUrlFromJson: string) {
-            return new URL(
-                '../assets/images/' + imgUrlFromJson,
-                import.meta.url
-            ).href;
-        }
+        getImgUrl
     },
 })
 </script>

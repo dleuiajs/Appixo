@@ -1,6 +1,8 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
+import { getImgUrl } from '@/utils/getImgUrl';
+
 export default defineComponent({
     name: "AppBigCard",
     props: {
@@ -21,12 +23,7 @@ export default defineComponent({
             this.activeIndex = index;
             this.dialogShowed = true;
         },
-        getImgUrl(imgUrlFromJson: string) {
-            return new URL(
-                '../assets/images/' + imgUrlFromJson,
-                import.meta.url
-            ).href;
-        }
+        getImgUrl
     }
 })
 </script>
