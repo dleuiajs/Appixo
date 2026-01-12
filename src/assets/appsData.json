@@ -1,7 +1,6 @@
 {
     "apps": [
         {
-            "id": 1,
             "type": "game",
             "url": "snake_tse",
             "name": "Snake: Tetris Style Edition",
@@ -19,10 +18,14 @@
                 "apps_screenshots/SnakeScreenshot3.png"
             ],
             "logo": "apps_logos/SnakeLogo1_1.png",
-            "wideLogo": "apps_logos/SnakeLogo16_10.png"
+            "wideLogo": "apps_logos/SnakeLogo16_10.png",
+            "releaseDate": "02.09.2025",
+            "developer": "dleuiajs",
+            "githubLink": "https://github.com/dleuiajs/Snake",
+            "trailerLink": "https://www.youtube.com/watch?v=naKlMseYmuM",
+            "downloadLink": "https://github.com/dleuiajs/Snake/releases/download/v1.02/Snake.v1.02.x64.zip"
         },
         {
-            "id": 2,
             "type": "software",
             "url": "virtualpiano",
             "name": "VirtualPiano",
@@ -36,10 +39,14 @@
                 "apps_screenshots/VirtualPianoScreenshot.png"
             ],
             "logo": "apps_logos/VirtualPianoLogo.png",
-            "wideLogo": "apps_logos/VirtualPianoLogo.png"
+            "wideLogo": "apps_logos/VirtualPianoLogo.png",
+            "releaseDate": "22.02.2023",
+            "developer": "dleuiajs",
+            "githubLink": "https://github.com/dleuiajs/VirtualPiano",
+            "trailerLink": null,
+            "downloadLink": "https://example.com/"
         },
         {
-            "id": 3,
             "type": "game",
             "url": "springball",
             "name": "Spring Ball",
@@ -56,10 +63,14 @@
                 "apps_screenshots/SpringBallScreenshot3.png"
             ],
             "logo": "apps_logos/SpringBallLogo1_1.png",
-            "wideLogo": "apps_logos/SpringBallLogo16_10.png"
+            "wideLogo": "apps_logos/SpringBallLogo16_10.png",
+            "releaseDate": null,
+            "developer": "dleuiajs",
+            "githubLink": null,
+            "trailerLink": null,
+            "downloadLink": "https://example.com/"
         },
         {
-            "id": 4,
             "type": "game",
             "url": "fishisland",
             "name": "Fish Island",
@@ -77,10 +88,14 @@
                 "apps_screenshots/FishIslandScreenshot3.png"
             ],
             "logo": "apps_logos/FishIslandLogo1_1.png",
-            "wideLogo": "apps_logos/FishIslandLogo16_10.png"
+            "wideLogo": "apps_logos/FishIslandLogo16_10.png",
+            "releaseDate": null,
+            "developer": "dleuiajs",
+            "githubLink": null,
+            "trailerLink": null,
+            "downloadLink": "https://example.com/"
         },
         {
-            "id": 5,
             "type": "software",
             "url": "fakeoverclockcpu",
             "name": "Fake Overclock CPU",
@@ -96,10 +111,14 @@
                 "apps_screenshots/OverclockScreenshot3.png"
             ],
             "logo": "apps_logos/OverclockLogo1_1.png",
-            "wideLogo": "apps_logos/OverclockLogo16_10.png"
+            "wideLogo": "apps_logos/OverclockLogo16_10.png",
+            "releaseDate": "27.08.2023",
+            "developer": "dleuiajs",
+            "githubLink": "http://github.com/dleuiajs/FakeOverclockCPU",
+            "trailerLink": null,
+            "downloadLink": "https://example.com/"
         },
         {
-            "id": 6,
             "type": "software",
             "url": "keyboardtrainerconsole",
             "name": "Keyboard Trainer Console",
@@ -115,10 +134,14 @@
                 "apps_screenshots/KeyboardTrainerConsoleScreenshot3.png"
             ],
             "logo": "apps_logos/KeyboardTrainerConsoleLogo1_1.png",
-            "wideLogo": "apps_logos/KeyboardTrainerConsoleLogo16_10.png"
+            "wideLogo": "apps_logos/KeyboardTrainerConsoleLogo16_10.png",
+            "releaseDate": "06.06.2023",
+            "developer": "dleuiajs",
+            "githubLink": "https://github.com/dleuiajs/KeyboardTrainerConsole",
+            "trailerLink": null,
+            "downloadLink": "https://example.com/"
         },
         {
-            "id": 7,
             "type": "software",
             "url": "steamgamesremover",
             "name": "Steam Games Remover",
@@ -133,10 +156,14 @@
                 "apps_screenshots/SteamGamesRemoverScreenshot2.png"
             ],
             "logo": "apps_logos/SteamGamesRemoverLogo1_1.png",
-            "wideLogo": "apps_logos/SteamGamesRemoverLogo16_10.png"
+            "wideLogo": "apps_logos/SteamGamesRemoverLogo16_10.png",
+            "releaseDate": "18.03.2023",
+            "developer": "dleuiajs",
+            "githubLink": "https://github.com/dleuiajs/SteamGamesRemover",
+            "trailerLink": null,
+            "downloadLink": "https://example.com/"
         },
         {
-            "id": 8,
             "type": "software",
             "url": "fakeminer",
             "name": "Fake Miner",
@@ -152,10 +179,14 @@
                 "apps_screenshots/FakeMinerScreenshot3.png"
             ],
             "logo": "apps_logos/FakeMinerLogo1_1.png",
-            "wideLogo": "apps_logos/FakeMinerLogo16_10.png"
+            "wideLogo": "apps_logos/FakeMinerLogo16_10.png",
+            "releaseDate": "16.06.2023",
+            "developer": "dleuiajs",
+            "githubLink": "https://github.com/dleuiajs/FakeMiner",
+            "trailerLink": null,
+            "downloadLink": "https://example.com/"
         },
         {
-            "id": 4,
             "type": "game",
             "url": "agessurvival",
             "name": "Ages Survival",
@@ -172,7 +203,12 @@
                 "apps_screenshots/AgesSurvivalScreenshot3.png"
             ],
             "logo": "apps_logos/AgesSurvivalLogo1_1.png",
-            "wideLogo": "apps_logos/AgesSurvivalLogo16_10.png"
+            "wideLogo": "apps_logos/AgesSurvivalLogo16_10.png",
+            "releaseDate": null,
+            "developer": "dleuiajs",
+            "githubLink": null,
+            "trailerLink": null,
+            "downloadLink": "https://example.com/"
         }
     ]
 }
