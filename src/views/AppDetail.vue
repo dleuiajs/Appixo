@@ -51,7 +51,7 @@ export default defineComponent({
                             <v-img :src="getImgUrl(app.wideLogo)" :aspect-ratio="16 / 10" :alt="app.name + ' logo'"
                                 max-width="500" cover></v-img>
                         </v-col>
-                        <v-col cols="6" class="d-flex flex-column flex-wrap justify-space-between">
+                        <v-col cols="6" class="d-flex flex-column justify-space-between">
                             <div class="d-flex flex-column">
                                 <span class="text-h6">{{ app.name }}</span>
                                 <span class="text-body-1">{{ app.description }}</span>
@@ -65,7 +65,7 @@ export default defineComponent({
                             <div class="d-flex flex-wrap ga-2">
 
                             </div>
-                            <div class="d-flex flex-row ga-2">
+                            <div class="d-flex flex-row ga-2 flex-wrap mt-3">
                                 <v-btn variant="tonal" color="primary" :href="app.downloadLink"
                                     download>Download</v-btn>
                                 <v-btn v-if="app.githubLink" variant="tonal" color="primary" :href="app.githubLink"
