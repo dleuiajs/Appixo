@@ -10,7 +10,8 @@ export default defineComponent({
     },
     props: {
         appType: { type: String, required: true },
-        appsLimit: { type: Number, required: false, default: 0 }
+        appsLimit: { type: Number, required: false, default: 0 },
+        sortBy: { type: String, required: true }
     },
     data() {
         return {
@@ -19,11 +20,34 @@ export default defineComponent({
     },
     computed: {
         filteredApps() {
-            let filtered = this.apps.filter((app) => app.type === this.appType)
+            let filteredApps = this.apps.filter((app) => app.type === this.appType)
             if (this.appsLimit > 0) {
-                filtered = filtered.slice(0, this.appsLimit)
+                filteredApps = filteredApps.slice(0, this.appsLimit)
             }
-            return filtered;
+
+            switch (this.sortBy) {
+                case 'newest':
+                    filteredApps.sort((a, b) => {
+                        const dateA = a.releaseDate ? new Date(a.releaseDate).getTime() : 0;
+                        const dateB = b.releaseDate ? new Date(b.releaseDate).getTime() : 0;
+                        return dateB - dateA;
+                    })
+                    break;
+                case 'oldest':
+                    filteredApps.sort((a, b) => {
+                        const dateA = a.releaseDate ? new Date(a.releaseDate).getTime() : 0;
+                        const dateB = b.releaseDate ? new Date(b.releaseDate).getTime() : 0;
+                        return dateA - dateB;
+                    })
+                    break;
+                case 'name_asc':
+                    filteredApps.sort((a, b) => a.name.localeCompare(b.name))
+                    break;
+                case 'name_desc':
+                    filteredApps.sort((a, b) => b.name.localeCompare(a.name))
+                    break;
+            }
+            return filteredApps;
         }
     }
 })
@@ -31,7 +55,7 @@ export default defineComponent({
 
 <template>
     <div class="d-flex flex-row flex-wrap ga-3">
-        <AppCard v-for="app in filteredApps" :key="app.id" :url="app.url" :title="app.name"
+        <AppCard v-for="app in filteredApps" :key="app.url" :url="app.url" :title="app.name"
             :description="app.description" :tags="app.tags" :logoImg="app.logo" :screenshotsImgs="app.screenshots"
             :type="appType" :views="0" :downloads="0" :hearts="0" />
     </div>

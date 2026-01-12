@@ -23,24 +23,24 @@ export default {
       <div class="d-flex flex-column ga-5 mb-10 px-5 mx-1">
         <div class="d-flex flex-column ga-3">
           <div class="d-flex flex-row align-center ga-5">
-            <span class="text-h5">Top games:</span>
+            <span class="text-h5">Newest games:</span>
             <v-btn append-icon="mdi-arrow-right" variant="outlined" color="red-lighten-2" max-height="28"
               to="/apps/games">
               <p class="text-caption">More</p>
             </v-btn>
           </div>
-          <AppCardsList appType="game" :appsLimit="14" />
+          <AppCardsList appType="game" :appsLimit="14" sortBy="newest" />
         </div>
 
         <div class="d-flex flex-column ga-3">
           <div class="d-flex flex-row align-center ga-5">
-            <span class="text-h5">Top software:</span>
+            <span class="text-h5">Newest software:</span>
             <v-btn append-icon="mdi-arrow-right" variant="outlined" color="red-lighten-2" max-height="28"
               to="/apps/software">
               <p class="text-caption">More</p>
             </v-btn>
           </div>
-          <AppCardsList appType="software" :appsLimit="14" />
+          <AppCardsList appType="software" :appsLimit="14" sortBy="newest" />
         </div>
       </div>
     </v-main>

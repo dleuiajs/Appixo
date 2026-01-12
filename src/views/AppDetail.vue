@@ -16,7 +16,16 @@ export default defineComponent({
         }
     },
     methods: {
-        getImgUrl
+        getImgUrl,
+        formatDate(date: string | null) {
+            if (!date) return 'Coming Soon';
+
+            const d = new Date(date);
+            const day = String(d.getDate()).padStart(2, '0');
+            const month = String(d.getMonth() + 1).padStart(2, '0');
+            const year = d.getFullYear();
+            return `${day}.${month}.${year}`;
+        }
     },
     computed: {
         app() {
@@ -56,10 +65,7 @@ export default defineComponent({
                                 <span class="text-h6">{{ app.name }}</span>
                                 <span class="text-body-1">{{ app.description }}</span>
                                 <span class="text-body-1 mt-2">Tags: {{ app.tags.join(', ') }}</span>
-                                <span class="text-body-1 mt-2">Release Date:
-                                    <span v-if="app.releaseDate">{{ app.releaseDate }}</span>
-                                    <span v-else>Coming Soon</span>
-                                </span>
+                                <span class="text-body-1 mt-2">Release Date: {{ formatDate(app.releaseDate) }}</span>
                                 <span class="text-body-1">Developer: {{ app.developer }}</span>
                             </div>
                             <div class="d-flex flex-wrap ga-2">

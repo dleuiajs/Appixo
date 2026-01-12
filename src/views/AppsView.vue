@@ -14,6 +14,14 @@ export default {
     data() {
         return {
             appTypesData: appTypesData.types,
+            sortBy: 'popular',
+            sortOptions: [
+                { title: 'Most popular', value: 'popular' },
+                { title: 'Newest', value: 'newest' },
+                { title: 'Oldest', value: 'oldest' },
+                { title: 'Name (A-Z)', value: 'name_asc' },
+                { title: 'Name (Z-A)', value: 'name_desc' },
+            ]
         }
     },
     computed: {
@@ -39,10 +47,12 @@ export default {
         <v-main>
             <div class="d-flex flex-column ga-5 mb-10 px-5 mx-1 my-5" v-if="getAppTypeData">
                 <div class="d-flex flex-column ga-3">
-                    <div class="d-flex flex-row align-center ga-5">
+                    <div class="d-flex flex-row align-center justify-space-between ga-5">
                         <span class="text-h5">{{ getAppTypeData.namePlural }}:</span>
+                        <v-select v-model="sortBy" :items="sortOptions" label="Sort by" density="compact"
+                            max-width="200" class="d-flex align-center" />
                     </div>
-                    <AppCardsList :appType="getAppTypeData.type" :appsLimit="14" />
+                    <AppCardsList :appType="getAppTypeData.type" :sortBy="sortBy" />
                 </div>
             </div>
         </v-main>

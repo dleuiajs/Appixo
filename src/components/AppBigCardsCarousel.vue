@@ -29,7 +29,7 @@ export default defineComponent({
 <template>
     <v-card class="py-4" elevation="2">
         <v-carousel height="380" cycle hide-delimiter-background delimiter-icon="mdi-square-rounded" color="grey">
-            <v-carousel-item v-for="(app, index) in randomApps" :value="index" :key="app.id">
+            <v-carousel-item v-for="(app, index) in randomApps" :value="index" :key="app.url">
                 <AppBigCard :url="app.url" :title="app.name" :description="app.description" :tags="app.tags"
                     :wideLogoImg="app.wideLogo" :screenshotsImgs="app.screenshots" :type="app.type" />
             </v-carousel-item>
