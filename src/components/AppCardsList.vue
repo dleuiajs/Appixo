@@ -11,7 +11,8 @@ export default defineComponent({
     props: {
         appType: { type: String, required: true },
         appsLimit: { type: Number, required: false, default: 0 },
-        sortBy: { type: String, required: true }
+        sortBy: { type: String, required: true },
+        searchText: { type: String, required: false, default: '' },
     },
     data() {
         return {
@@ -21,6 +22,15 @@ export default defineComponent({
     computed: {
         filteredApps() {
             let filteredApps = this.apps.filter((app) => app.type === this.appType)
+
+            if (this.searchText) {
+                filteredApps = filteredApps.filter((app) =>
+                    app.name.toLowerCase().includes(this.searchText) ||
+                    app.description.toLowerCase().includes(this.searchText) ||
+                    app.tags.some((tag) => tag.toLowerCase().includes(this.searchText))
+                );
+            }
+
             if (this.appsLimit > 0) {
                 filteredApps = filteredApps.slice(0, this.appsLimit)
             }
