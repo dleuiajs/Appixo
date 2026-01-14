@@ -12,7 +12,8 @@ export default defineComponent({
         appType: { type: String, required: true },
         appsLimit: { type: Number, required: false, default: 0 },
         sortBy: { type: String, required: true },
-        searchText: { type: String, required: false, default: '' },
+        searchText: { type: String, required: false, default: null },
+        selectedTags: { type: Array as () => string[], required: false, default: null }
     },
     data() {
         return {
@@ -29,6 +30,10 @@ export default defineComponent({
                     app.description.toLowerCase().includes(this.searchText) ||
                     app.tags.some((tag) => tag.toLowerCase().includes(this.searchText))
                 );
+            }
+
+            if (this.selectedTags && this.selectedTags.length > 0) {
+                filteredApps = filteredApps.filter((app) => this.selectedTags.every((selectedTag) => app.tags.includes(selectedTag)))
             }
 
             if (this.appsLimit > 0) {
