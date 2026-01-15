@@ -1,9 +1,8 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
-
 import { getImgUrl } from '@/utils/getImgUrl';
-
 import appsData from '@/assets/appsData.json';
+import { useStatsStore } from '@/stores/stats'
 
 export default defineComponent({
     name: 'AppDetail',
@@ -12,6 +11,7 @@ export default defineComponent({
     },
     data() {
         return {
+            statsStore: useStatsStore(),
             apps: appsData.apps,
         }
     },
@@ -25,6 +25,9 @@ export default defineComponent({
             const month = String(d.getMonth() + 1).padStart(2, '0');
             const year = d.getFullYear();
             return `${day}.${month}.${year}`;
+        },
+        downloadApp() {
+            this.statsStore.addDownload(this.appUrl);
         }
     },
     computed: {
@@ -46,6 +49,9 @@ export default defineComponent({
             },
             immediate: true
         }
+    },
+    created() {
+        this.statsStore.addView(this.appUrl);
     }
 })
 </script>
@@ -53,7 +59,7 @@ export default defineComponent({
 <template>
     <v-app>
         <v-main>
-            <v-card class="d-flex flex-row flex-wrap justify-center py-5 px-5 mx-16 ga-3 my-5" v-if="app">
+            <v-card class="py-5 px-5 mx-16 my-5" v-if="app">
                 <v-container>
                     <v-row>
                         <v-col cols="6">
@@ -72,10 +78,17 @@ export default defineComponent({
 
                             </div>
                             <div class="d-flex flex-row ga-2 flex-wrap mt-3">
-                                <v-btn variant="tonal" color="primary" :href="app.downloadLink"
+                                <v-btn variant="tonal" color="primary" :href="app.downloadLink" @click="downloadApp"
                                     download>Download</v-btn>
                                 <v-btn v-if="app.githubLink" variant="tonal" color="primary" :href="app.githubLink"
                                     target="_blank">GitHub</v-btn>
+                                <v-divider vertical class="mx-2"></v-divider>
+                                <v-btn icon height="36" width="36" @click="statsStore.toggleLike(app.url)">
+                                    <v-icon size="24"
+                                        :color="statsStore.getLikeState(app.url) ? 'red-lighten-1' : ''">{{
+                                            statsStore.getLikeState(app.url) ? 'mdi-heart' :
+                                                'mdi-heart-outline' }}</v-icon>
+                                </v-btn>
                             </div>
                         </v-col>
                     </v-row>

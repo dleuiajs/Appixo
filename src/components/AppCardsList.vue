@@ -2,6 +2,7 @@
 import { defineComponent } from 'vue';
 import AppCard from './AppCard.vue';
 import appsData from '@/assets/appsData.json';
+import { useStatsStore } from '@/stores/stats';
 
 export default defineComponent({
     name: "AppCardsList",
@@ -18,6 +19,7 @@ export default defineComponent({
     data() {
         return {
             apps: appsData.apps,
+            statsStore: useStatsStore(),
         }
     },
     computed: {
@@ -41,6 +43,9 @@ export default defineComponent({
             }
 
             switch (this.sortBy) {
+                case 'popular':
+                    filteredApps.sort((a, b) => this.statsStore.getScore(b.url) - this.statsStore.getScore(a.url));
+                    break;
                 case 'newest':
                     filteredApps.sort((a, b) => {
                         const dateA = a.releaseDate ? new Date(a.releaseDate).getTime() : 0;

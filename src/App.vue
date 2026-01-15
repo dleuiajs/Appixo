@@ -6,6 +6,7 @@ import TheNavigation from './components/TheNavigation.vue';
 import TheFooter from './components/TheFooter.vue';
 
 import { useSettingsStore } from './stores/settings';
+import { useStatsStore } from './stores/stats'
 
 export default {
   name: 'App',
@@ -17,6 +18,7 @@ export default {
   data() {
     return {
       settingsStore: useSettingsStore(),
+      statsStore: useStatsStore(),
       theme: useTheme(),
     }
   },
@@ -27,6 +29,7 @@ export default {
   },
   created() {
     this.settingsStore.initTheme();
+    this.statsStore.load();
   }
 }
 </script>

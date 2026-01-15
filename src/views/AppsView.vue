@@ -16,6 +16,7 @@ export default {
         return {
             appTypesData: appTypesData.types,
             apps: appsData.apps,
+
             searchInputText: '',
             searchText: '',
             selectedTags: [] as string[],

@@ -3,8 +3,15 @@ import { defineComponent } from 'vue';
 
 import { getImgUrl } from '@/utils/getImgUrl';
 
+import { useStatsStore } from '@/stores/stats'
+
 export default defineComponent({
     name: "AppCard",
+    data() {
+        return {
+            statsStore: useStatsStore(),
+        }
+    },
     props: {
         url: { type: String, required: true },
         title: { type: String, required: true },
@@ -12,9 +19,6 @@ export default defineComponent({
         tags: { type: Array as () => string[], required: true },
         logoImg: { type: String, required: true },
         screenshotsImgs: { type: Array as () => string[], required: true },
-        views: { type: Number, required: true },
-        downloads: { type: Number, required: true },
-        hearts: { type: Number, required: true },
         type: { type: String, required: true }
     },
     methods: {
@@ -33,13 +37,13 @@ export default defineComponent({
                 <v-card-subtitle>
                     <div class="d-flex flex-row ga-3">
                         <div class="d-flex flex-row ga-1">
-                            <v-icon>mdi-eye</v-icon>{{ views }}
+                            <v-icon>mdi-eye</v-icon>{{ statsStore.getViews(url) }}
                         </div>
                         <div class="d-flex flex-row ga-1">
-                            <v-icon>mdi-download-circle</v-icon>{{ downloads }}
+                            <v-icon>mdi-download-circle</v-icon>{{ statsStore.getDownloads(url) }}
                         </div>
                         <div class="d-flex flex-row ga-1">
-                            <v-icon>mdi-heart</v-icon>{{ hearts }}
+                            <v-icon>mdi-heart</v-icon>{{ statsStore.getLikes(url) }}
                         </div>
                     </div>
                 </v-card-subtitle>
