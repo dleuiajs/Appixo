@@ -1,1 +1,0 @@
-import{_ as s,c as o,e as t,o as n}from"./index-Bqr8Im-p.js";const a={name:"NotFound"},r={class:"d-flex flex-column align-center justify-center mx-5 my-5"};function c(l,e,d,f,p,u){return n(),o("div",r,[...e[0]||(e[0]=[t("span",{class:"text-h5"},"Error",-1),t("span",{class:"text-subtitle-1"},"Page not found",-1)])])}const _=s(a,[["render",c]]);export{_ as default};
