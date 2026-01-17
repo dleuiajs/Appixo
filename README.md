@@ -1,6 +1,7 @@
 # Appixo
+Webová stránka pre zdieľanie hier a aplikácií medzi používateľmi
 
-This template should help get you started developing with Vue 3 in Vite.
+[Stránka na GitHub Pages](https://dleuiajs.github.io/Appixo/)
 
 ## Recommended IDE Setup
 
