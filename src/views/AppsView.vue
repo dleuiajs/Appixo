@@ -64,25 +64,20 @@ export default {
 </script>
 
 <template>
-    <v-app>
-        <v-main>
-            <div class="d-flex flex-column ga-5 mb-10 px-5 mx-1 my-5" v-if="getAppTypeData">
-                <div class="d-flex flex-column ga-3">
-                    <div class="d-flex flex-row align-center justify-space-between ga-5">
-                        <span class="text-h5">{{ getAppTypeData.namePlural }}:</span>
-                        <div class="d-flex flex-row flex-wrap align-center ga-2">
-                            <v-text-field v-model="searchInputText" label="Search apps" prepend-inner-icon="mdi-magnify"
-                                clearable density="compact" width="200" @keyup.enter="applySearch"></v-text-field>
-                            <v-select v-model="selectedTags" :items="allTags" label="Filter by tags" multiple chips
-                                clearable density="compact" min-width="165" max-width="350"></v-select>
-                            <v-select v-model="sortBy" :items="sortOptions" label="Sort by" density="compact"
-                                max-width="200" />
-                        </div>
-                    </div>
-                    <AppCardsList :appType="getAppTypeData.type" :sortBy="sortBy" :searchText="searchText"
-                        :selectedTags="selectedTags" />
+    <div class="d-flex flex-column ga-5 mb-10 px-5 mx-1 my-5" v-if="getAppTypeData">
+        <div class="d-flex flex-column ga-3">
+            <div class="d-flex flex-row align-center justify-space-between ga-5">
+                <span class="text-h5">{{ getAppTypeData.namePlural }}:</span>
+                <div class="d-flex flex-row flex-wrap align-center ga-2">
+                    <v-text-field v-model="searchInputText" label="Search apps" prepend-inner-icon="mdi-magnify"
+                        clearable density="compact" width="200" @keyup.enter="applySearch"></v-text-field>
+                    <v-select v-model="selectedTags" :items="allTags" label="Filter by tags" multiple chips clearable
+                        density="compact" min-width="165" max-width="350"></v-select>
+                    <v-select v-model="sortBy" :items="sortOptions" label="Sort by" density="compact" max-width="200" />
                 </div>
             </div>
-        </v-main>
-    </v-app>
+            <AppCardsList :appType="getAppTypeData.type" :sortBy="sortBy" :searchText="searchText"
+                :selectedTags="selectedTags" />
+        </div>
+    </div>
 </template>
