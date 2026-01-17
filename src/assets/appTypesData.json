@@ -4,13 +4,22 @@
             "type": "game",
             "typePlural": "games",
             "name": "Game",
-            "namePlural": "Games"
+            "namePlural": "Games",
+            "additonal": false
         },
         {
             "type": "software",
             "typePlural": "software",
             "name": "Software",
-            "namePlural": "Software"
+            "namePlural": "Software",
+            "additonal": false
+        },
+        {
+            "type": "liked",
+            "typePlural": "liked",
+            "name": "Liked",
+            "namePlural": "Liked",
+            "additonal": true
         }
     ]
 }

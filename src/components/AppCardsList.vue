@@ -24,7 +24,13 @@ export default defineComponent({
     },
     computed: {
         filteredApps() {
-            let filteredApps = this.apps.filter((app) => app.type === this.appType)
+            let filteredApps;
+            if (this.appType !== 'liked') {
+                filteredApps = this.apps.filter((app) => app.type === this.appType)
+            }
+            else {
+                filteredApps = this.apps.filter((app) => this.statsStore.getLikeState(app.url) === true);
+            }
 
             if (this.searchText) {
                 filteredApps = filteredApps.filter((app) =>
